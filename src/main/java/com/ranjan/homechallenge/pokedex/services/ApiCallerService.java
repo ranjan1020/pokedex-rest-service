@@ -3,7 +3,7 @@ package com.ranjan.homechallenge.pokedex.services;
 import com.ranjan.homechallenge.pokedex.models.PokedexResponse;
 
 import java.net.URISyntaxException;
-import java.util.Map;
+
 
 public interface ApiCallerService {
 

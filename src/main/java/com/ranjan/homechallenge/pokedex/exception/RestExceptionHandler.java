@@ -1,6 +1,7 @@
 package com.ranjan.homechallenge.pokedex.exception;
 
 
+import com.ranjan.homechallenge.pokedex.models.PokedexExceptionResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.sql.Timestamp;
 
 
 @ControllerAdvice
@@ -25,7 +27,11 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      */
     @ExceptionHandler(value = {HttpClientErrorException.class})
     public ResponseEntity<Object> handleAnyException(HttpClientErrorException ex, WebRequest request) {
-       return new ResponseEntity<>(ex.getStatusText(), new HttpHeaders(), HttpStatus.NOT_FOUND);
+        PokedexExceptionResponse pokedexExceptionResponse = new PokedexExceptionResponse();
+        pokedexExceptionResponse.setHttpStatus(ex.getStatusCode());
+        pokedexExceptionResponse.setTimeStamp(new Timestamp(System.currentTimeMillis()));
+        pokedexExceptionResponse.setMessage(ex.getLocalizedMessage());
+       return new ResponseEntity<>(pokedexExceptionResponse, new HttpHeaders(), ex.getStatusCode());
     }
 
     /**

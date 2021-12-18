@@ -7,7 +7,7 @@ The API has two main API two main endpoints:
 
 Endpoint 1:
 
-http://localhost:8081/pokemon/<<pokemon name>>
+http://localhost:8081/pokemon/<pokemon name>
 
 Response contains following fields:
     * Pokemon's name

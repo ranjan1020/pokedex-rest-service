@@ -10,11 +10,12 @@ Endpoint 1:
 http://localhost:8081/pokemon/{pokemon name)
 
 Response contains following fields:
-    * Pokemon's name
-    * Pokemon's standard description
-    * Pokemon's habitat
-    * Pokeman's is_legandary status
-    * Pokemon's generation
+
+    -- Pokemon's name
+    -- Pokemon's standard description
+    -- Pokemon's habitat
+    -- Pokeman's is_legandary status
+    -- Pokemon's generation
 
 e.g. http://localhost:8081/pokemon/pikachu
 

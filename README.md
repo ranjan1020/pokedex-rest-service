@@ -80,7 +80,7 @@ Starting this application:
 
 This application can also be run as standalone jar file. Java is pre-requisite to run this a jar file. Jar file can be found in project root directory. 
 
-`java -jar target/pokedex-0.0.1-SNAPSHOT.jar`
+`java -jar pokedex-0.0.1-SNAPSHOT.jar`
 
 Test this application by calling the endpoints from
 1. A browser

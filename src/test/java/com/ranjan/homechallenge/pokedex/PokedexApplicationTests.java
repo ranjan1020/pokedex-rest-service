@@ -73,5 +73,23 @@ class PokedexApplicationTests {
 		assertThat(response.getBody()).isEqualTo("{\"Pokedex response:\":\"Pokemon name not received!!!!!\"}");
 	}
 
+	/**
+	 * This test calls the endpoint /pokemon/translated/ditto and asserts response is valid.
+	 * Assertion removes some special character.
+	 * API "https://api.funtranslations.com/translate/" allows only 5 requests per hour. In case
+	 * number of request exceeds 5 request in any given our this test case will check if the response
+	 * is TOO_MANY_REQUESTS
+	 *
+	 */
+	@Test
+	public void testDittoTranslatedPokeApi() throws Exception {
+		ResponseEntity<String> response = template.getForEntity("/pokemon/translated/ditto", String.class);
+		if(response.getStatusCode().equals(HttpStatus.OK))
+			assertThat(response.getBody().replaceAll("[^a-zA-Z0-9.{:\",-_}]", " "))
+					.isEqualTo("{\"name\":\"ditto\",\"description\":\"At which hour  t encounters another ditto,   twill moveth faster than ingraft to duplicate yond opponent jump.\",\"habitat\":\"urban\",\"isLegendary\":false,\"generation\":\"generation-i\"}");
+		else
+			assertThat(response.getStatusCode()).isEqualTo(HttpStatus.TOO_MANY_REQUESTS);
+	}
+
 
 }

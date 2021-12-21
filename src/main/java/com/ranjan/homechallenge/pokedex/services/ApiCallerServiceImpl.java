@@ -4,6 +4,7 @@ import com.ranjan.homechallenge.pokedex.types.v2.pokemon_species.$id.FlavorTextE
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -40,6 +41,7 @@ public class ApiCallerServiceImpl implements ApiCallerService{
      * @throws URISyntaxException
      */
     @Override
+    @Cacheable("PokedexResponse")
     public PokedexResponse GetSpeciesDescription(String pokemonName) throws URISyntaxException {
 
         final String baseUrl = pokespeciesUrl+pokemonName;
@@ -95,6 +97,7 @@ public class ApiCallerServiceImpl implements ApiCallerService{
      */
 
     @Override
+    @Cacheable("PokedexResponse")
     public PokedexResponse GetTranslatedSpeciesDescription(String pokemonName) throws URISyntaxException {
 
         PokedexResponse pokeTranlatedResp = GetSpeciesDescription(pokemonName);

@@ -87,6 +87,5 @@ Test this application by calling the endpoints from
 2. Postman
 3. Or any other tool/app to test API
 
-## **Future Improvements in pipeline:**
-1. Caching of request to reduce number of time other api's are called by this application internally.
+
 

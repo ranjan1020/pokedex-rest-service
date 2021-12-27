@@ -78,6 +78,7 @@ Starting this application:
 2. From command line interface run following command from project's root directory:
    `mvn spring-boot:run`
 3. Use docker compose to run the app as container
+   `docker-compose up -d`
 
 This application can also be run as standalone jar file. Java is pre-requisite to run this a jar file. Jar file can be found in project root directory. 
 

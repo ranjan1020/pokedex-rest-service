@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  API:
+    image: 'ranjan1020/pokedex:pokedex-ctr'
+    ports:
+      - "8081:8081"

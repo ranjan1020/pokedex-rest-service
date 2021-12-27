@@ -76,13 +76,14 @@ For development following software are required:
 Starting this application:
 1. Any IDE (e.g. Intellij) can be used to import this project and start this application by selecting "run PokedexApplication".
 2. From command line interface run following command from project's root directory:
+
    `mvn spring-boot:run`
 3. Use docker compose to run the app as container
+
    `docker-compose up -d`
+4. This application can also be run as standalone jar file. Java is pre-requisite to run this a jar file. Jar file can be found in project root directory.
 
-This application can also be run as standalone jar file. Java is pre-requisite to run this a jar file. Jar file can be found in project root directory. 
-
-`java -jar pokedex-0.0.1-SNAPSHOT.jar`
+   `java -jar pokedex-0.0.1-SNAPSHOT.jar`
 
 Test this application by calling the endpoints from
 1. A browser

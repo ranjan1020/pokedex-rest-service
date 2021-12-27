@@ -77,6 +77,7 @@ Starting this application:
 1. Any IDE (e.g. Intellij) can be used to import this project and start this application by selecting "run PokedexApplication".
 2. From command line interface run following command from project's root directory:
    `mvn spring-boot:run`
+3. Use docker compose to run the app as container
 
 This application can also be run as standalone jar file. Java is pre-requisite to run this a jar file. Jar file can be found in project root directory. 
 
